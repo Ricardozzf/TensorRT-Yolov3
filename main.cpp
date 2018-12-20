@@ -168,7 +168,7 @@ int main( int argc, char* argv[] )
     int h = parser::getIntValue("H");
     int w = parser::getIntValue("W");  
     auto t_start = std::chrono::high_resolution_clock::now();
-    auto detects = get_detections(outputData.get(),width,height,h,w,&nboxes,classes);
+    auto detects = get_detections(outputData.get(),width,height,w,h,&nboxes,classes);
     auto t_end = std::chrono::high_resolution_clock::now();
     float total = std::chrono::duration<float, std::milli>(t_end - t_start).count();
     std::cout << "Time taken for yolo is " << total << " ms." << std::endl;
